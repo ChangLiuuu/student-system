@@ -19,8 +19,7 @@ configure :production do
   DataMapper.auto_migrate!
 end
 
-#get('/styles.css'){ scss :styles }
-get("/_bootswatch.scss") {scss :styles}
+get('/styles.css'){ scss :styles }
 
 get '/' do
   redirect("/login") unless session[:admin]
@@ -54,6 +53,10 @@ end
 get '/contact' do
   redirect("/login") unless session[:admin]  
   erb :contact
+end
+
+get "/video" do
+  erb :video
 end
 
 not_found do

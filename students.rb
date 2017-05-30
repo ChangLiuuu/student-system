@@ -5,16 +5,16 @@ class Student
   include DataMapper::Resource
   property :id, Serial
   property :name, String
-  property :grade, Text
-  property :score, Integer
-  property :birthday , Date
+  property :studentID, String
+  property :phoneNumber, String
+  property :birthday, Date
   
 end
 
 configure do
   enable :sessions
-  set :username, 'frank'
-  set :password, 'sinatra'
+  set :username, 'ruby'
+  set :password, 'ruby'
 end
 
 DataMapper.finalize
