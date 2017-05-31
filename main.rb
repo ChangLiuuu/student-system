@@ -5,8 +5,8 @@ require './students'
 
 configure do
   enable :sessions
-  set :username, 'ruby'
-  set :password, 'ruby'
+  set :username, "ruby"
+  set :password, "123"
 end
 
 configure :development do
@@ -22,7 +22,6 @@ end
 get('/styles.scss'){ scss :styles }
 
 get '/' do
-  # redirect("/login")
   erb :home
 end
 
@@ -31,9 +30,9 @@ get "/login" do
 end
 
 post "/login" do
-  if params["login"]["username"] == 'ruby' && params['login']['password'] == "ruby"
-    # session[:admin] = true
-    # redirect to ("/")
+  if params["login"]["username"] == 'ruby' && params['login']['password'] == "123"
+    session[:admin] = true
+    redirect to ("/students")
   else
     erb :login
   end
@@ -45,13 +44,11 @@ get "/logout" do
 end
 
 get '/about' do
-  # redirect("/login")
   @title = "All About This Website"
   erb :about
 end
 
 get '/contact' do
-  # redirect("/login")
   erb :contact
 end
 

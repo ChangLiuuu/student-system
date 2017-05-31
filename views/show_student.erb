@@ -1,21 +1,24 @@
-<h1> <%= @students.name %> </h1>
-<p> 
-    Release Date: <%= @students.birthday.strftime("%B %e %Y") if @students.birthday %>
-</p>
-<p> 
-    Student ID: <%= @students.studentID %>%
-</p>
-<p> 
-    Phone Number: <%= @students.phoneNumber %>
-</p>
-<p> 
-    <a href="/students">Back to Student Directory</a> </p>
-<p> 
-    <a href="/students/<%= @students.id%>/edit">Edit
-    </a>
-</p>
-
-<form action="/students/<%= @students.id %>" method="POST">
-  <input type="hidden" name="_method" value="DELETE"/>
-  <input class="" type="submit" value="delete this student"/>
+<h2>Name: <%= @students.name %> </h2>
+<h2>
+  Release Date: <%= @students.birthday.strftime("%B %e %Y") if @students.birthday %>
+</h2>
+<h2>
+  Student ID: <%= @students.studentID %>
+</h2>
+<h2>
+  Phone Number: <%= @students.phoneNumber %>
+</h2>
+<hr>
+<div>
+  <a class="myButton" href="/students">Back to Student Directory</a>
+  <br>
+  <br>
+  <a class="myButton" href="/students/<%= @students.id %>/edit">Edit</a>
+  <form action="/students/<%= @students.id %>" method="POST" id="form2">
+    <input type="hidden" name="_method" value="DELETE"/>
   </form>
+  <br>
+  <a class="myButton" form="form2">DELETE this student</a>
+</div>
+
+

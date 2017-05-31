@@ -45,9 +45,11 @@ header h1 {
     padding: 0;
     background: $background;
     overflow: hidden;
+    border-bottom: 5px solid #9c0615;
   }
   li {
     float: left;
+    font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
   }
   a {
     text-decoration: none;
@@ -56,14 +58,19 @@ header h1 {
     background: $background;
     color: $color;
     &:hover {
-      background: darken($background, 20%);
+      background: darken($background, 10%);
     }
+  }
+  .nav_right {
+    float: right;
   }
 }
 
 nav {
   @include tabs ($background: $black, $color: $white);
   font-weight: bold;
+  margin:0 auto; width:auto; border:1px solid #ccc
+
 }
 
 p {
@@ -86,7 +93,7 @@ label {
   font-family:Arial;
   font-size:15px;
   font-weight:bold;
-  padding:9px 23px;
+  padding:10px 23px;
   text-decoration:none;
   text-shadow:0px -1px 0px #7a2a1d;
 }
@@ -97,3 +104,12 @@ label {
   position:relative;
   top:1px;
 }
+
+div {
+  width: 250px;
+}
+
+
+
+
+
