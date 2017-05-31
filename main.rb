@@ -5,8 +5,8 @@ require './students'
 
 configure do
   enable :sessions
-  set :username, 'frank'
-  set :password, 'sinatra'
+  set :username, 'ruby'
+  set :password, 'ruby'
 end
 
 configure :development do
@@ -19,10 +19,10 @@ configure :production do
   DataMapper.auto_migrate!
 end
 
-get('/styles.css'){ scss :styles }
+get('/styles.scss'){ scss :styles }
 
 get '/' do
-  redirect("/login") unless session[:admin]
+  # redirect("/login")
   erb :home
 end
 
@@ -31,9 +31,9 @@ get "/login" do
 end
 
 post "/login" do
-  if params["login"]["username"] == 'frank' && params['login']['password'] == "sinatra"
-    session[:admin] = true
-    redirect to ("/")
+  if params["login"]["username"] == 'ruby' && params['login']['password'] == "ruby"
+    # session[:admin] = true
+    # redirect to ("/")
   else
     erb :login
   end
@@ -45,13 +45,13 @@ get "/logout" do
 end
 
 get '/about' do
-  redirect("/login") unless session[:admin]
+  # redirect("/login")
   @title = "All About This Website"
   erb :about
 end
 
 get '/contact' do
-  redirect("/login") unless session[:admin]  
+  # redirect("/login")
   erb :contact
 end
 

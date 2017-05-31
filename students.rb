@@ -20,25 +20,25 @@ end
 DataMapper.finalize
 
 get '/students' do
-  redirect("/login") unless session[:admin]
+  # redirect("/login") unless session[:admin]
   @students = Student.all
   erb :students
 end
 
 get '/students/new' do
-  redirect("/login") unless session[:admin]
+  # redirect("/login") unless session[:admin]
   @students = Student.new
   erb :new_student
 end
 
 get '/students/:id' do
-  redirect("/login") unless session[:admin]
+  # redirect("/login") unless session[:admin]
   @students = Student.get(params[:id])
   erb :show_student
 end
 
 get '/students/:id/edit' do
-  redirect("/login") unless session[:admin]
+  # redirect("/login") unless session[:admin]
   @students = Student.get(params[:id])
   if @students
     puts(@students.name, @students.grade)
@@ -49,20 +49,20 @@ get '/students/:id/edit' do
 end
 
 post '/students' do  
-  redirect("/login") unless session[:admin]
+  # redirect("/login") unless session[:admin]
   students = Student.create(params['students'])
   redirect to("/students/#{students.id}")
 end
 
 put '/students/:id' do
-  redirect("/login") unless session[:admin]
+  # redirect("/login") unless session[:admin]
   students = Student.get(params[:id])
   students.update(params['students'])
   redirect to("/students/#{students.id}")
 end
 
 delete '/students/:id' do
-  redirect("/login") unless session[:admin]
+  # redirect("/login") unless session[:admin]
   Student.get(params[:id]).destroy
   redirect to('/students')
 end

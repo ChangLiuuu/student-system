@@ -3,10 +3,10 @@
     Release Date: <%= @students.birthday.strftime("%B %e %Y") if @students.birthday %>
 </p>
 <p> 
-    Score: <%= @students.score %>%
+    Student ID: <%= @students.studentID %>%
 </p>
 <p> 
-    Grade: <%= @students.grade %>
+    Phone Number: <%= @students.phoneNumber %>
 </p>
 <p> 
     <a href="/students">Back to Student Directory</a> </p>
@@ -17,5 +17,5 @@
 
 <form action="/students/<%= @students.id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE"/>
-  <input type="submit" value="delete this song"/>
+  <input class="" type="submit" value="delete this student"/>
   </form>

@@ -1,4 +1,4 @@
-<% if @students%>
+<% if @students %>
 <label for="name"> Name:</label>
 <input id="name" type="text" name="students[name]" value= "<%= @students.name%>" />
 
@@ -6,7 +6,7 @@
 <input id="released_on" type="text" name="students[birthday]" value="<%= @students.birthday.strftime('%m/%d/%Y') if @students.birthday%>"/>
 
 <label for="studentID"> Student ID:</label>
-<input id='studentID' type="number" name="students[score]" value="<%= @students.studentID %>"/>
+<input id='studentID' type="text" name="students[studentID]" value="<%= @students.studentID %>"/>
 
 <label for="phoneNumber"> Phone Number: </label>
 <input id ="phoneNumber" name="students[phoneNumber]" value="<%= @students.phoneNumber %>"/>

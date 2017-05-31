@@ -1,9 +1,9 @@
-<form action="/login" method="POST">
+<form action="/login" method="POST" id="form1">
 <label for="username"> Username:</label>
 <input id="username" type="text" name="login[username]"/>
 
 <label for="password">Password:</label>
 <input id='password' type="password" name="login[password]"/>
-
-<input type="submit" value="Login"/>
 </form>
+<br>
+<button type="submit" class="myButton" form="form1" value="Submit">Login</button>

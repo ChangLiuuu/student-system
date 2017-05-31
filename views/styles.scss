@@ -1,4 +1,5 @@
 $red: #903;
+$blue: #4349bb;
 $black: #444;
 $white: #fff;
 $main-font: Helvetica, Arial, sans-serif;
@@ -17,19 +18,23 @@ body {
     margin:2em auto 2em;
     padding:25px;
     position:relative;
-    font-family: $main-font;	
+    font-family: $main-font;
 }
 
 
 h1 {
   color: $red;
-  font: 32px/1 $main-font;
+  font: 32px $main-font;
+}
+
+h2 {
+  color: $red;
+  font: 20px $main-font;
 }
 
 header h1 {
   font-size: 40px;
   line-height: 80px;
-  background: transparent url(/images/favicon.ico) 0 0 no-repeat;
   padding-left: 105px;
 }
 
@@ -67,4 +72,28 @@ p {
 
 label {
   display: block;
+}
+
+.myButton {
+  -moz-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+  -webkit-box-shadow:inset 0px 34px 0px -15px #b54b3a;
+  box-shadow:inset 0px 34px 0px -15px #b54b3a;
+  background-color:#a73f2d;
+  border:1px solid #241d13;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:9px 23px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #7a2a1d;
+}
+.myButton:hover {
+  background-color:#b34332;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
 }

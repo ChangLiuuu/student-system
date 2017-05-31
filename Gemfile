@@ -5,6 +5,6 @@ gem "sass"
 gem "dm-core" 
 gem "dm-migrations"
 gem "pg", :group => :production
-gem "thin"
+# gem "thin"
 gem "dm-postgres-adapter", :group => :production
 gem "dm-sqlite-adapter", :group => :development
