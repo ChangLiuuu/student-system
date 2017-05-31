@@ -6,7 +6,11 @@
       <ul id="students">
         <% @students.each do |student| %>
             <li>
-              <a href="/students/<%= student.id %>"><%= student.name %></a>
+              <a
+              href="/students/<%= student.id %>"
+              style="font-family:'Verdana'; font-size: medium; color: chocolate">
+                <%= student.name %>
+              </a>
             </li>
         <% end %>
       </ul>

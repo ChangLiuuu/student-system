@@ -1,0 +1,22 @@
+<h1>Comments</h1>
+<a class="myButton" href="/comment/new">Create a comment</a>
+<hr>
+<div style="width: 700px;">
+  <% if @comments.any? %>
+      <ul id="comments">
+        <% @comments.each do |comment| %>
+            <li>
+              <a style="font-family:'Verdana'; font-size: medium; color: chocolate"
+                 href="/comments/<%= comment.id %>">
+                <%= comment.name %> :
+              </a>
+              <span style="font-family:'Verdana'; font-size: small; color: black"><%= comment.content %></span><br>
+              <span style="font-family:'Courier New'; font-size: small; color: rosybrown; float: right"> --created at <%= comment.created_at %> </span>
+            </li>
+            <br>
+        <% end %>
+      </ul>
+  <% else %>
+      <p>No comment created!</p>
+  <% end %>
+</div>

@@ -1,7 +1,9 @@
 require 'sinatra'
 require 'erb'
 require 'sass'
+require './comments'
 require './students'
+
 
 configure do
   enable :sessions
@@ -25,11 +27,11 @@ get '/' do
   erb :home
 end
 
-get "/login" do
+get '/login' do
   erb :login
 end
 
-post "/login" do
+post '/login' do
   if params["login"]["username"] == 'ruby' && params['login']['password'] == "123"
     session[:admin] = true
     redirect to ("/students")
@@ -38,7 +40,7 @@ post "/login" do
   end
 end
 
-get "/logout" do
+get '/logout' do
   session[:admin] = nil
   redirect to ("/")
 end
@@ -52,7 +54,7 @@ get '/contact' do
   erb :contact
 end
 
-get "/video" do
+get '/video' do
   erb :video
 end
 

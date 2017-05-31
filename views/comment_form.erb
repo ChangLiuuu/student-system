@@ -1,0 +1,14 @@
+<% if @comments %>
+    <label for="name"> Name:</label>
+    <input id="name" style="width: 200px; height: 20px;" type="text" name="comments[name]" value= "<%= @comments.name%>" />
+
+    <label for="released_on"> Content: </label>
+   <textarea style="font-size: medium;" rows="15" cols="80" name="comments[content]"></textarea>
+    <br>
+    <br>
+    <input type="hidden" name="comments[created_at]" value="<%= Time.now %>">
+    <br>
+    <input class="myButton" type="submit" value="Save Comment"/>
+<% else %>
+    <p>no comment!</p>
+<% end %>

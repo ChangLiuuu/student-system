@@ -1,0 +1,18 @@
+<h2>Comment:</h2>
+<h3>Name: <%= @comments.name if @comments.name %> </h3>
+
+<p>
+  Content: <%= @comments.content if @comments.content %>
+</p>
+<hr>
+<div>
+  <a class="myButton" href="/comment">Back to Comment Directory</a>
+  <br>
+  <br>
+  <form action="/comment/<%= @comments.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <br>
+    <input action="/comment" class="myButton" type="submit" value="Delete this Comment"/>
+  </form>
+</div>
+

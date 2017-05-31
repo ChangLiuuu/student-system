@@ -8,13 +8,12 @@ class Student
   property :studentID, String
   property :phoneNumber, String
   property :birthday, Date
-  
 end
 
 configure do
   enable :sessions
   set :username, 'ruby'
-  set :password, 'ruby'
+  set :password, '123'
 end
 
 DataMapper.finalize

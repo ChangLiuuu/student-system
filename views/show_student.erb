@@ -1,6 +1,6 @@
 <h2>Name: <%= @students.name %> </h2>
 <h2>
-  Release Date: <%= @students.birthday.strftime("%B %e %Y") if @students.birthday %>
+  Birthday: <%= @students.birthday.strftime("%B %e %Y") if @students.birthday %>
 </h2>
 <h2>
   Student ID: <%= @students.studentID %>
@@ -14,11 +14,14 @@
   <br>
   <br>
   <a class="myButton" href="/students/<%= @students.id %>/edit">Edit</a>
-  <form action="/students/<%= @students.id %>" method="POST" id="form2">
+
+  <form action="/students/<%= @students.id %>" method="POST" >
     <input type="hidden" name="_method" value="DELETE"/>
+    <br>
+    <input class="myButton" type="submit" value="Delete this student"/>
   </form>
   <br>
-  <a class="myButton" form="form2">DELETE this student</a>
+
 </div>
 
 
