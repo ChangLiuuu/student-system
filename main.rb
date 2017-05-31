@@ -31,10 +31,14 @@ get '/login' do
   erb :login
 end
 
+get '/loginsc' do
+  erb :loginsc
+end
+
 post '/login' do
   if params["login"]["username"] == 'ruby' && params['login']['password'] == "123"
     session[:admin] = true
-    redirect to ("/students")
+    redirect to ("/loginsc")
   else
     erb :login
   end

@@ -47,7 +47,7 @@ get '/students/:id/edit' do
   erb :edit_students
 end
 
-post '/students' do  
+post '/students' do
   redirect("/login") unless session[:admin]
   students = Student.create(params['students'])
   redirect to("/students/#{students.id}")

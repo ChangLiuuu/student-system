@@ -9,10 +9,10 @@
   <a class="myButton" href="/comment">Back to Comment Directory</a>
   <br>
   <br>
-  <form action="/comment/<%= @comments.id %>" method="POST">
+  <form action="/comments/<%=@comments.id%>" method="POST">
     <input type="hidden" name="_method" value="DELETE"/>
     <br>
-    <input action="/comment" class="myButton" type="submit" value="Delete this Comment"/>
+    <input class="myButton" type="submit" value="Delete this Comment"/>
   </form>
 </div>
 

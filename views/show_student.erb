@@ -15,7 +15,7 @@
   <br>
   <a class="myButton" href="/students/<%= @students.id %>/edit">Edit</a>
 
-  <form action="/students/<%= @students.id %>" method="POST" >
+  <form action="/students/<%= @students.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE"/>
     <br>
     <input class="myButton" type="submit" value="Delete this student"/>

@@ -17,6 +17,7 @@ get '/comment' do
 end
 
 get '/comment/new' do
+  redirect("/login") unless session[:admin]
   @comments = Comment.new
   erb :new_comment
 end
@@ -31,6 +32,13 @@ end
 post '/comment' do
   redirect("/login") unless session[:admin]
   comments = Comment.create(params['comments'])
+  redirect to("/comments/#{comments.id}")
+end
+
+put '/comments/:id' do
+  redirect("/login") unless session[:admin]
+  comments = Comment.get(params[:id])
+  comments.update(params['comment'])
   redirect to("/comments/#{comments.id}")
 end
 
